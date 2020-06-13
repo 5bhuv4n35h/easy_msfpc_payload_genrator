@@ -352,8 +352,9 @@ __   __ / |      / _ \
 EOF
 
 echo -e "$YELLOW"
-echo -e "${BLUE} @5bhuv4n35h - shankar bhuvanesh"
+echo -e "${RED} @5bhuv4n35h - shankar bhuvanesh"
 echo -e "${BLUE} Contribute and collaborate to the easload genrator v1.0 https://github.com/5bhuv4n35h/easy_msfpc_payload_genrator/"
+ echo -e "$GREEN"
 ## main loop starts
 options=("binaries" "webpayloads" "scritpting payloads" "Quit")
 select opt in "${options[@]}"
