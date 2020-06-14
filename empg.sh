@@ -166,7 +166,7 @@ linuxrc()
 {   
 		echo -e "$RED"
 		read -p "enter rc name" lrc
-		echo -e "\n your metsploit rc wil be saved in  $PWD"
+		echo -e "\n your metsploit rc wil be saved in  $PWD" 
 		touch $lrc.rc
 		echo "workspace $lrc">${lrc}.rc
 		echo "use exploit/multi/handler">>${lrc}.rc
@@ -208,6 +208,7 @@ phprc()
 {   
 		echo -e "$RED"
 		read -p "enter rc name" phprc
+		
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
 		touch $phprc.rc
 		echo "workspace $phprc">${phprc}.rc
@@ -222,6 +223,7 @@ asprc()
 {  
 		echo -e "$RED"
 		read -p "enter rc name" asprc
+		
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
 		touch $asprc.rc
 		echo "workspace $asprc">${asprc}.rc
@@ -236,6 +238,7 @@ jsprc()
 {   
 		echo -e "$RED"
 		read -p "enter rc name" jsprc
+
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
 		touch $jsprc.rc
 		echo "workspace $jsprc">${jsprc}.rc
@@ -262,6 +265,7 @@ pyrc()
 { 
 		echo -e "$RED"
 		read -p "enter rc name" pyrc
+
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
 		touch $pyrc.rc
 		echo "workspace $pyrc">${pyrc}.rc
