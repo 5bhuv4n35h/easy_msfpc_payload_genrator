@@ -101,10 +101,16 @@ linux/x86/meterpreter/reverse_tcp
 
 
 ####  **Windows Based Shellcode**
+ 
+
+
+
+
 
 ```
 windows/meterpreter/reverse_tcp 
 ```
+
 
 
 
@@ -114,10 +120,12 @@ windows/meterpreter/reverse_tcp
 osx/x86/shell_reverse_tcp 
 ```
 
+
 # run rc sript by  typing
 
 ``` 
 msfconsole -r script.rc
 ```
+
 
 #### thankyou [netsec](https://netsec.ws/?p=331)
